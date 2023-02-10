@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Bài Tập JS buổi 3 </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#bai1">Bài 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#bai2">Bài 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#bai3">Bài 3</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#bai4">Bài 4</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="bai1" id="bai1">
+      <div class="container">
+        <div class="icon">
+          <button><i class="fa fa-book"> BÀI 1</i></button>
+        </div>
+        <div class="baitap">
+          <h3><i class="fa fa-school"></i> Quản lý tuyển sinh</h3>
+          <div class="card w-50 mx-auto">
+            <div class="card-header form-control text-center">
+              <p>Khu Vực</p>
+              <input type="text" id="khuVuc" />
+              <p>Đối Tượng</p>
+              <input type="number" id="doiTuong" />
+            </div>
+            <div class="card-body form-control text-center">
+              <p>Điểm môn thứ nhất</p>
+              <input type="number" name="" id="monThuNhat" />
+              <p>Điểm môn thứ hai</p>
+              <input type="number" name="" id="monThuHai" />
+              <p>Điểm môn thứ ba</p>
+              <input type="number" name="" id="monThuBa" />
+            </div>
+            <div class="card-footer form-control text-center">
+              <button class="btn btn-success form-control" onclick="tinhDiem()">
+                Tính Tổng Điểm:
+              </button>
+              <div class="display-4">
+                <span id="hamTinhTong"></span>
+                Điểm
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bai2" id="bai2">
+      <div class="container">
+        <div class="icon">
+          <button><i class="fa fa-book"> BÀI 2</i></button>
+        </div>
+        <div class="baitap">
+          <h3><i class="fab fa-elementor"></i> Tính Tiền Điện</h3>
+          <div class="card w-50 mx-auto">
+            <div class="card-header form-control text-center">
+              <p>Tên</p>
+              <input type="text" id="tenKhachHang" />
+            </div>
+            <div class="card-body form-control text-center">
+              <p>Số KW</p>
+              <input type="number" name="" id="soKW" />
+            </div>
+            <div class="card-footer form-control text-center">
+              <button class="btn btn-success form-control" onclick="tienDien()">
+                Số tiền cần trả cho lượng điện tiêu thụ là :
+              </button>
+              <div class="display-6">
+                <span id="hamTinhDien"></span>
+                Đồng 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bai3" id="bai3">
+      <div class="container">
+        <div class="icon">
+          <button><i class="fa fa-money-bill"> Bài 3</i></button>
+        </div>
+        <div class="baitap">
+          <h3><i class="fa fa-money-bill"></i> Tính Tiền Thuế</h3>
+          <div class="card w-50 mx-auto">
+            <div class="card-header form-control text-center">
+              <p>Nhập Họ Tên</p>
+              <input type="text" id="nhapHoTen" />
+            </div>
+            <div class="card-body form-control text-center">
+              <p>Tổng Thu Nhập Năm </p>
+              <input type="number" name="" id="thuNhap" />
+              <p>Số Người Phụ Thuộc </p>
+              <input type="number" name="" id="phuThuoc" />
+            </div>
+            <div class="card-footer form-control text-center">
+              <button class="btn btn-success form-control" onclick="tinhThueLa()">
+               Tính Tiền Thuế:
+              </button>
+              <div class="display-6">
+                <span id="hamTinhThue"></span>
+                VND
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bai4" id="bai4">
+      <div class="container">
+        <div class="icon">
+          <button> <i class="fa fa-bolt"></i> Bài 4</button>
+        </div>
+        <div class="baitap">
+          <h3> <i class="fa fa-bolt"></i>Tính Tiền Cáp </h3>
+        </div>
+        <div class="card w-50 mx-auto">
+          <div class="card-header form-control text-center">
+            <p>Chọn Loại Khách Hàng</p>
+            <select name="" id="khachHang">
+              <option value="nhaDan">Nhà Dân</option>
+              <option value="doanhNghiep">Doanh Nghiệp </option>
+
+            </select>
+          </div>
+          <div class="card-body form-control text-center">
+            <p>Mã Khách Hàng</p>
+            <input type="text" name="" id="maKhachHang" />
+            <p>Số Kênh Cao Cấp </p>
+            <input type="number" name="" id="kenhCaoCap" />
+            <p>Số Kết Nối </p>
+            <input type="number" name="" id="soKetNoi" />
+          </div>
+          <div class="card-footer form-control text-center">
+            <button class="btn btn-success form-control" onclick="tienCap()">
+             Tính Tiền Cáp:
+            </button>
+            <div class="display-6">
+              <span id="hamTinhCap"></span>
+              $
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    z
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
