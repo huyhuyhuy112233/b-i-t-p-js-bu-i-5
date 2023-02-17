@@ -65,6 +65,8 @@
               <input type="text" id="khuVuc" />
               <p>Đối Tượng</p>
               <input type="number" id="doiTuong" />
+              <p>Điểm Chuẩn</p>
+              <input type="number" id="diemChuan" />
             </div>
             <div class="card-body form-control text-center">
               <p>Điểm môn thứ nhất</p>
@@ -81,6 +83,10 @@
               <div class="display-4">
                 <span id="hamTinhTong"></span>
                 Điểm
+                <br>
+                Kết Quả: 
+                <span id="ketQua"></span>
+              
               </div>
             </div>
           </div>
@@ -107,6 +113,10 @@
               <button class="btn btn-success form-control" onclick="tienDien()">
                 Số tiền cần trả cho lượng điện tiêu thụ là :
               </button>
+              <div class="display-6">
+                Họ Và Tên:
+                <span id="tenNguoiDung"></span>
+              </div>
               <div class="display-6">
                 <span id="hamTinhDien"></span>
                 Đồng 
@@ -138,6 +148,10 @@
               <button class="btn btn-success form-control" onclick="tinhThueLa()">
                Tính Tiền Thuế:
               </button>
+              <div class="display-6">
+                Họ Và Tên:
+                <span id="hoVaTen"></span>
+              </div>
               <div class="display-6">
                 <span id="hamTinhThue"></span>
                 VND
@@ -176,6 +190,10 @@
             <button class="btn btn-success form-control" onclick="tienCap()">
              Tính Tiền Cáp:
             </button>
+            <div class="display-6">
+              Mã Khách Hàng:
+              <span id="mKH"></span>
+            </div>
             <div class="display-6">
               <span id="hamTinhCap"></span>
               $

@@ -5,7 +5,9 @@ function tinhDiem() {
     var diemMonThuNhat = +document.getElementById('monThuNhat').value;
     var diemMonThuHai = +document.getElementById('monThuHai').value;
     var diemMonThuBa = +document.getElementById('monThuBa').value;
+    var diemChuan = +document.getElementById('diemChuan').value;
     var diemTrungBinh = 0;
+    var outPut = '';
     var tongDiem = 0;
     diemTrungBinh = (diemMonThuNhat+diemMonThuHai+diemMonThuBa);
     if(khuVuc === 'A' && doiTuong == 1 && diemMonThuNhat && diemMonThuHai && diemMonThuBa > 0){
@@ -37,6 +39,13 @@ function tinhDiem() {
     if(khuVuc === 'C' && doiTuong == 3 && diemMonThuNhat && diemMonThuHai && diemMonThuBa > 0){
         tongDiem = (diemTrungBinh+0.5+1);
     } 
+    if(diemTrungBinh >= diemChuan){
+        outPut = ' Bạn đã đậu';
+    }
+    else{
+        outPut = ' Bạn đã rớt';
+    }
+    document.getElementById('ketQua').innerHTML = outPut;
     document.getElementById('hamTinhTong').innerHTML = tongDiem;
 }
 
@@ -62,6 +71,7 @@ function tienDien() {
     if(soKW > 350 ){
         tienDien =(50*500) + (50*650) + (100*850) + (150*1100) + (soKW-350)*1300;
     }
+    document.getElementById('tenNguoiDung').innerHTML =  tenKhachHang;
     document.getElementById('hamTinhDien').innerHTML = tienDien.toLocaleString();
 }
 
@@ -94,6 +104,7 @@ function tinhThueLa() {
     if(thuNhapChiuThue > 960000000) {
         tienLuong = thuNhapChiuThue * 35 / 100;
     }
+    document.getElementById('hoVaTen').innerHTML =  hoTen;
     document.getElementById('hamTinhThue').innerHTML = tienLuong.toLocaleString();
 }
 
@@ -115,5 +126,6 @@ function tienCap() {
     else if(loaiKhachHang === 'doanhNghiep' && soKetNoi > 10) {
        tongTien = 15 + (soKetNoi - 10) * 5  + 75 + (50*kenhCaoCap); 
     }
+    document.getElementById('mKH').innerHTML = maKhachHang;
     document.getElementById('hamTinhCap').innerHTML = tongTien.toLocaleString();
 }
