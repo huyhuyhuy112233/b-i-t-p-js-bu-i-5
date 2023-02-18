@@ -39,16 +39,15 @@ function tinhDiem() {
     if(khuVuc === 'C' && doiTuong == 3 && diemMonThuNhat && diemMonThuHai && diemMonThuBa > 0){
         tongDiem = (diemTrungBinh+0.5+1);
     } 
-    if(diemTrungBinh >= diemChuan){
+    if(diemChuan <= tongDiem){
         outPut = ' Bạn đã đậu';
     }
     else{
         outPut = ' Bạn đã rớt';
     }
-    document.getElementById('ketQua').innerHTML = outPut;
-    document.getElementById('hamTinhTong').innerHTML = tongDiem;
+    document.getElementById('ketQua').innerHTML = "Kết Quả: " +  outPut;
+    document.getElementById('hamTinhTong').innerHTML = " Điểm: " + tongDiem;
 }
-
 
 // bài tập 2
 function tienDien() {
@@ -71,8 +70,8 @@ function tienDien() {
     if(soKW > 350 ){
         tienDien =(50*500) + (50*650) + (100*850) + (150*1100) + (soKW-350)*1300;
     }
-    document.getElementById('tenNguoiDung').innerHTML =  tenKhachHang;
-    document.getElementById('hamTinhDien').innerHTML = tienDien.toLocaleString();
+    document.getElementById('tenNguoiDung').innerHTML =  " Tên Khách Hàng: " + tenKhachHang;
+    document.getElementById('hamTinhDien').innerHTML = "Tiền Điện là: " + tienDien.toLocaleString() + " Đồng ";
 }
 
 // bài tập ba
@@ -104,9 +103,10 @@ function tinhThueLa() {
     if(thuNhapChiuThue > 960000000) {
         tienLuong = thuNhapChiuThue * 35 / 100;
     }
-    document.getElementById('hoVaTen').innerHTML =  hoTen;
-    document.getElementById('hamTinhThue').innerHTML = tienLuong.toLocaleString();
+    document.getElementById('hoVaTen').innerHTML = "  Họ Và Tên:" +hoTen;
+    document.getElementById('hamTinhThue').innerHTML = " Tiền thuế thu nhập cá nhân: " +tienLuong.toLocaleString() + "VND ";
 }
+
 
 function tienCap() {
 
@@ -126,6 +126,6 @@ function tienCap() {
     else if(loaiKhachHang === 'doanhNghiep' && soKetNoi > 10) {
        tongTien = 15 + (soKetNoi - 10) * 5  + 75 + (50*kenhCaoCap); 
     }
-    document.getElementById('mKH').innerHTML = maKhachHang;
-    document.getElementById('hamTinhCap').innerHTML = tongTien.toLocaleString();
+    document.getElementById('mKH').innerHTML = "Mã Khách Hàng: " +maKhachHang;
+    document.getElementById('hamTinhCap').innerHTML = tongTien.toLocaleString() + " $";
 }
