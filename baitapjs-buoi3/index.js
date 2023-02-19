@@ -107,25 +107,32 @@ function tinhThueLa() {
     document.getElementById('hamTinhThue').innerHTML = " Tiền thuế thu nhập cá nhân: " +tienLuong.toLocaleString() + "VND ";
 }
 
-
-function tienCap() {
-
-    // debugger;
-    var loaiKhachHang = document.getElementById('khachHang').value;
-    var maKhachHang = document.getElementById('maKhachHang').value;
-    var kenhCaoCap = +document.getElementById('kenhCaoCap').value;
-    var soKetNoi = +document.getElementById('soKetNoi').value;
-
-    var tongTien = 0;
-    if(loaiKhachHang === 'nhaDan'){
-        tongTien = 4.5 + 20.5 + (7.5 * kenhCaoCap);
+// bai tap 4: 
+document.getElementById('loaiKhachHang').onclick = function() {
+    var loaikhachHang = +document.getElementById('loaiKhachHang').value;
+    if(loaikhachHang === 2) {
+        document.getElementById('soCap').className = " d-block mt-3 ";
+    } else{
+        document.getElementById('soCap').className = " d-none ";
     }
-    if(loaiKhachHang === 'doanhNghiep' && soKetNoi <= 10){
-        tongTien = 15 + 75 + (50*kenhCaoCap);
+}
+
+function tienCap2() {
+    var loaiKhachHang = +document.getElementById('loaiKhachHang').value;
+    var maKhachHang = document.getElementById('maKhachHang2').value;
+    var kenhCaoCap = +document.getElementById('kenhCaoCap2').value;
+    var soCap = +document.getElementById('soCap').value;
+
+    var tongTien2 = 1;
+    if(loaiKhachHang === 1){
+        tongTien2 = 4.5 + 20.5 + (7.5 * kenhCaoCap);
     }
-    else if(loaiKhachHang === 'doanhNghiep' && soKetNoi > 10) {
-       tongTien = 15 + (soKetNoi - 10) * 5  + 75 + (50*kenhCaoCap); 
+    if(loaiKhachHang === 2 && soCap <= 10){
+        tongTien2 = 15 + 75 + (50*kenhCaoCap);
     }
-    document.getElementById('mKH').innerHTML = "Mã Khách Hàng: " +maKhachHang;
-    document.getElementById('hamTinhCap').innerHTML = tongTien.toLocaleString() + " $";
+    else if(loaiKhachHang === 2 && soCap > 10) {
+       tongTien2 = 15 + (soCap - 10) * 5  + 75 + (50*kenhCaoCap); 
+    }
+    document.getElementById('mKH2').innerHTML = "Mã Khách Hàng: " +maKhachHang;
+    document.getElementById('hamTinhCap2').innerHTML = tongTien2.toLocaleString() + " $";
 }
