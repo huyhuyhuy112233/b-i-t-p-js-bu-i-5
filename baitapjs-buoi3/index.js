@@ -83,25 +83,25 @@ function tinhThueLa() {
     var thuNhapChiuThue = (tongThuNhap - 4000000 - soNGuoiPhuThuoc * 1600000);
     var tienLuong = 0;
     if(thuNhapChiuThue <= 60000000) {
-        tienLuong = thuNhapChiuThue * 5 / 100 ;
+        tienLuong = thuNhapChiuThue * (5 / 100) ;
     }
     if(thuNhapChiuThue > 60000000 && thuNhapChiuThue <= 120000000){
-        tienLuong = thuNhapChiuThue * 10 / 100;
+        tienLuong = (60000000 * 0.05) + (thuNhapChiuThue - 60000000) * (10 / 100);
     }
     if(thuNhapChiuThue > 120000000 && thuNhapChiuThue <= 210000000){
-        tienLuong = thuNhapChiuThue * 15 / 100;
+        tienLuong = (60000000*0.05) + (60000000*0.1) + (thuNhapChiuThue - 120000000)  * (15 / 100);
     }
     if(thuNhapChiuThue > 210000000 && thuNhapChiuThue <= 384000000){
-        tienLuong = thuNhapChiuThue * 20 / 100;
+        tienLuong = (60000000*0.05) + (60000000*0.1) + (90000000*0.15) +  (thuNhapChiuThue - 210000000) * (20 / 100);
     }
     if(thuNhapChiuThue > 384000000 && thuNhapChiuThue <= 624000000){
-        tienLuong = thuNhapChiuThue * 25 / 100;
+        tienLuong = (60000000*0.05) + (60000000*0.1) + (90000000*0.15) + ( 174000000 * 0.2)   + (thuNhapChiuThue - 384000000) * 25 / 100;
     }
     if(thuNhapChiuThue > 624000000 && thuNhapChiuThue <= 960000000){
-        tienLuong = thuNhapChiuThue * 30 / 100;
+        tienLuong = (60000000*0.05) + (60000000*0.1) + (90000000*0.15) + ( 174000000 * 0.2) + (240000000*0.25) +  (thuNhapChiuThue - 624000000 ) * 30 / 100;
     }
     if(thuNhapChiuThue > 960000000) {
-        tienLuong = thuNhapChiuThue * 35 / 100;
+        tienLuong =  (60000000*0.05) + (60000000*0.1) + (90000000*0.15) + ( 174000000 * 0.2) + (240000000*0.25) + (336000000*0.3) + ( thuNhapChiuThue - 960000000 ) * 35 / 100;
     }
     document.getElementById('hoVaTen').innerHTML = "  Họ Và Tên:" +hoTen;
     document.getElementById('hamTinhThue').innerHTML = " Tiền thuế thu nhập cá nhân: " +tienLuong.toLocaleString() + "VND ";
